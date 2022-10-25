@@ -49,6 +49,7 @@
 		};
 		
 		embedded_svc.addEventHandler("afterMaximize", function(data) {
+			console.log(data);
 			let contactFirstnameEl = document.querySelector('input.Contact_Firstname__c');
 			if(contactFirstnameEl != null){
 				contactFirstnameEl.value = firstname;
