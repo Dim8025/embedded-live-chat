@@ -43,7 +43,7 @@
 		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
 		
 		embedded_svc.addEventHandler("afterMaximize", function(data) {
-		    let contactFirstnameEl = document.querySelector('input.Contact_Firstname__c');
+			let contactFirstnameEl = document.querySelector('input.Contact_Firstname__c');
 			if(contactFirstnameEl != null){
 				contactFirstnameEl.value = firstname;
 				document.querySelector('.Contact_Firstname__c').parentNode.style.display = 'none';
