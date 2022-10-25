@@ -14,7 +14,7 @@
 		}
 	</style>
 	
-		<p>TEST v2.4</p>
+		<p>TEST v2.5</p>
 		
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
@@ -52,19 +52,19 @@
 			console.log(data);
 			let contactFirstnameEl = document.querySelector('input.Contact_Firstname__c');
 			if(contactFirstnameEl != null){
-				contactFirstnameEl.value = firstname;
+				contactFirstnameEl.setAttribute("value", firstname);
 				//document.querySelector('.Contact_Firstname__c').parentNode.style.display = 'none';
 			}
 			
 			let contactLastnameEl = document.querySelector('input.Contact_Lastname__c');
 			if(contactLastnameEl != null){
-				contactLastnameEl.value = lastname;
+				contactLastnameEl.setAttribute("value", lastname);
 				//document.querySelector('.Contact_Lastname__c').parentNode.style.display = 'none';
 			} 
 			
 			let suppliedEmailEl = document.querySelector('input.SuppliedEmail');
 			if(suppliedEmailEl != null){
-				suppliedEmailEl.value = email;
+				suppliedEmailEl.setAttribute("value", email);
 				//document.querySelector('.SuppliedEmail').parentNode.style.display = 'none';
 			} 
 			
