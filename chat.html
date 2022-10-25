@@ -115,7 +115,12 @@
 				buttonId: '57309000000cjrg',
 				baseLiveAgentURL: 'https://d.la1-c1cs-cdg.salesforceliveagent.com/chat',
 				eswLiveAgentDevName: 'AVChat',
-				isOfflineSupportEnabled: true
+				isOfflineSupportEnabled: true,
+				prepopulatedPrechatFields: {
+					Contact_Firstname__c: firstname,
+					Contact_Lastname__c: lastname,
+					SuppliedEmail: email
+				}
 			}
 		);
 	};
