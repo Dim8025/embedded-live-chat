@@ -12,20 +12,9 @@
 		.embeddedServiceHelpButton .helpButton .uiButton:focus {
 			outline: 1px solid #4A79FA;
 		}
-		
-		/*
-		.embeddedServiceSidebarFormField label[for="Contact_Firstname__c"],
-		.embeddedServiceSidebarFormField .Contact_Firstname__c,
-		.embeddedServiceSidebarFormField label[for="Contact_Lastname__c"],
-		.embeddedServiceSidebarFormField .Contact_Lastname__c,
-		.embeddedServiceSidebarFormField label[for="SuppliedEmail"],
-		.embeddedServiceSidebarFormField .SuppliedEmail{
-			display: none !important;
-		}
-		*/
 	</style>
 	
-		<p>TEST v1.4</p>
+		<p>TEST v1.5</p>
 		
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
@@ -52,12 +41,24 @@
 		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
 		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
 		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
-
+		
 		embedded_svc.settings.prepopulatedPrechatFields = {
-			Contact_Firstname__c: firstname,
-			Contact_Lastname__c: lastname,
-			SuppliedEmail: email
+		    Contact_Firstname__c : "SandeepTest",
+		    Contact_Lastname__c : "KumarTest",
+		    SuppliedEmail : "sandeep.saini482@gmail.com",
+		    Subject: "",
+		    Description__c: ""
 		};
+		
+		embedded_svc.addEventHandler("afterMaximize", function(data) {
+		    document.querySelector('.Contact_Firstname__c').parentNode.style.display = 'none';
+		    document.querySelector('.Contact_Lastname__c').parentNode.style.display = 'none';
+		    document.querySelector('.SuppliedEmail').parentNode.style.display = 'none';
+
+		    let typeEle = document.querySelector('.Type');
+		    typeEle.value = '';
+		    typeEle.dispatchEvent(new Event('change',{'bubbles':!0}));
+		});
 		
 		console.log(embedded_svc.settings.prepopulatedPrechatFields);
 		
@@ -117,12 +118,7 @@
 				buttonId: '57309000000cjrg',
 				baseLiveAgentURL: 'https://d.la1-c1cs-cdg.salesforceliveagent.com/chat',
 				eswLiveAgentDevName: 'AVChat',
-				isOfflineSupportEnabled: true,
-				prepopulatedPrechatFields: {
-					Contact_Firstname__c: firstname,
-					Contact_Lastname__c: lastname,
-					SuppliedEmail: email
-				}
+				isOfflineSupportEnabled: true
 			}
 		);
 	};
