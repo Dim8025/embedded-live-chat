@@ -15,6 +15,10 @@
 
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
+	var firstname = 'TEST FIRSTNAME';
+	var lastname = 'TEST FIRSTNAME';
+	var email = 'test@email.com';
+	
 	var initESW = function(gslbBaseURL) {
 		embedded_svc.settings.displayHelpButton = true; //Or false
 		embedded_svc.settings.language = 'en'; //For example, enter 'en' or 'en-US'
@@ -33,6 +37,47 @@
 		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
 		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
 		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
+		
+		embedded_svc.snippetSettingsFile.extraPrechatFormDetails = [
+			{
+			    "label": "First Name",
+			    "value": firstname,
+			    "transcriptFields": ["Contact_Firstname__c"],
+			    "displayToAgent":true
+			},
+			{
+			    "label": "Last Name",
+			    "value": lastname,
+			    "transcriptFields": ["Contact_Lastname__c"],
+			    "displayToAgent":true
+			},
+			{
+			    "label": "Email",
+			    "value": email,
+			    "transcriptFields": ["SuppliedEmail"],
+			    "displayToAgent":true
+			},
+			{
+			    "label": "Subject",
+			    "transcriptFields": ["Subject"],
+			    "displayToAgent":true
+			},
+			{
+			    "label": "Message",
+			    "transcriptFields": ["Description__c"],
+			    "displayToAgent":true
+			},
+			{
+			    "label": "Origin",
+			    "value": "Web",
+			    "transcriptFields": ["Origin"]
+			},
+			{
+			    "label": "Case Channel",
+			    "value": "Chat",
+			    "transcriptFields": ["Case_Channel__c"]
+			}
+	    	]; 
 
 		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
 		embedded_svc.settings.entryFeature = 'LiveAgent';
