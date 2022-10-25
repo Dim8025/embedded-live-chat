@@ -38,14 +38,13 @@
 		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
 		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
 		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
-		
-		console.log(firstname);
-		console.log(lastname);
-		console.log(email);
-		
+
 		embedded_svc.settings.prepopulatedPrechatFields = {
-			Contact_Firstname__c:'TEST FIRSTNAME'
+			Contact_Firstname__c: firstname,
+			Contact_Lastname__c: lastname,
+			SuppliedEmail: email
 		};
+		
 		console.log(embedded_svc.settings.prepopulatedPrechatFields);
 		
 		/*
