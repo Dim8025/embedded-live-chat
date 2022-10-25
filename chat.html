@@ -38,22 +38,25 @@
 		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
 		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
 		
+		embedded_svc.settings.prepopulatedPrechatFields = {
+			Contact_Firstname__c: firstname,
+			Contact_Lastname__c: lastname,
+			SuppliedEmail: email
+		};
+		
 		embedded_svc.snippetSettingsFile.extraPrechatFormDetails = [
 			{
 			    "label": "First Name",
-			    "value": firstname,
 			    "transcriptFields": ["Contact_Firstname__c"],
 			    "displayToAgent":true
 			},
 			{
 			    "label": "Last Name",
-			    "value": lastname,
 			    "transcriptFields": ["Contact_Lastname__c"],
 			    "displayToAgent":true
 			},
 			{
 			    "label": "Email",
-			    "value": email,
 			    "transcriptFields": ["SuppliedEmail"],
 			    "displayToAgent":true
 			},
