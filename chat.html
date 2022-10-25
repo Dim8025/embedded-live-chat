@@ -14,7 +14,7 @@
 		}
 	</style>
 	
-		<p>TEST v2.3</p>
+		<p>TEST v2.4</p>
 		
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
@@ -41,6 +41,12 @@
 		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
 		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
 		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
+		
+		embedded_svc.settings.prepopulatedPrechatFields = {
+			Contact_Firstname__c: firstname,
+			Contact_Lastname__c: lastname,
+			SuppliedEmail: email
+		};
 		
 		embedded_svc.addEventHandler("afterMaximize", function(data) {
 			let contactFirstnameEl = document.querySelector('input.Contact_Firstname__c');
