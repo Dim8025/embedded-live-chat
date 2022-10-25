@@ -52,7 +52,11 @@
 		
 		embedded_svc.addEventHandler("afterMaximize", function(data) {
 		    let contactFirstnameEl = document.querySelector('.Contact_Firstname__c');
-		    contactFirstnameEl.value = "SandeepTest";
+			if(contactFirstnameEl != null && contactFirstnameEl.hasOwnProperty('value')){
+				contactFirstnameEl.value = "SandeepTest";
+			} else {
+				console.log('ERR');
+			}
 		    //contactFirstnameEl.parentNode.style.display = 'none';
 			/*
 		    document.querySelector('.Contact_Firstname__c').parentNode.style.display = 'none';
