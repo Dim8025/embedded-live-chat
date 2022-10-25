@@ -44,7 +44,7 @@
 		console.log(email);
 		
 		embedded_svc.settings.prepopulatedPrechatFields = {
-			WebEmail: "test@test.com"
+			WebEmail: 'test@test.com'
 		};
 		
 		/*
@@ -104,10 +104,7 @@
 				eswLiveAgentDevName: 'AVChat',
 				isOfflineSupportEnabled: true
 			}
-		)
-		.then(() => {
-			console.log('INIT DONE');
-		});
+		);
 	};
 
 	if (!window.embedded_svc) {
