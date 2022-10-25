@@ -51,9 +51,14 @@
 		};
 		
 		embedded_svc.addEventHandler("afterMaximize", function(data) {
+		    let contactFirstnameEl = document.querySelector('.Contact_Firstname__c');
+		    contactFirstnameEl.value = "SandeepTest";
+		    //contactFirstnameEl.parentNode.style.display = 'none';
+			/*
 		    document.querySelector('.Contact_Firstname__c').parentNode.style.display = 'none';
 		    document.querySelector('.Contact_Lastname__c').parentNode.style.display = 'none';
 		    document.querySelector('.SuppliedEmail').parentNode.style.display = 'none';
+		    */
 		});
 		
 		console.log(embedded_svc.settings.prepopulatedPrechatFields);
