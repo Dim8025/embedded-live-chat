@@ -3,6 +3,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 	</head>
 	<body>
+		<p>TEST v1</p>
 
 <style type='text/css'>
 	.embeddedServiceHelpButton .helpButton .uiButton {
@@ -19,7 +20,8 @@
 	var firstname = 'TEST FIRSTNAME';
 	var lastname = 'TEST FIRSTNAME';
 	var email = 'test@email.com';
-	var language = 'en';
+	var language = navigator.language;
+	console.log(language);
 	
 	var initESW = function(gslbBaseURL) {
 		embedded_svc.settings.displayHelpButton = true; //Or false
