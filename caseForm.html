@@ -1,6 +1,32 @@
 <html>
   <head>
     <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+      
+    <script>
+      function populateFields(){
+        var firstname = 'firstname';
+        var lastname = 'lastname';
+        var email = 'email@test.com';
+        
+        let firstnameEl = this.template.querySelector('#00N1q000001hv7N');
+        if(firstnameEl != null){
+          firstnameEl.value = firstname;
+          firstnameEl.disabled = true;
+        }
+        
+        let lastnameEl = this.template.querySelector('#00N1q000001hv7X');
+        if(lastnameEl != null){
+          lastnameEl.value = lastname;
+          lastnameEl.disabled = true;
+        }
+        
+        let emailEl = this.template.querySelector('#email');
+        if(emailEl != null){
+          emailEl.value = email;
+          emailEl.disabled = true;
+        }
+      }
+    </script>
   </head>
   <body onload="populateFields()">
     <h1>Case Form</h1>
@@ -31,31 +57,5 @@
 
       <input type="submit" name="submit">
     </form>
-    
-    <script>
-      function populateFields(){
-        var firstname = 'firstname';
-        var lastname = 'lastname';
-        var email = 'email@test.com';
-        
-        let firstnameEl = this.template.querySelector('#00N1q000001hv7N');
-        if(firstnameEl != null){
-          firstnameEl.value = firstname;
-          firstnameEl.disabled = true;
-        }
-        
-        let lastnameEl = this.template.querySelector('#00N1q000001hv7X');
-        if(lastnameEl != null){
-          lastnameEl.value = lastname;
-          lastnameEl.disabled = true;
-        }
-        
-        let emailEl = this.template.querySelector('#email');
-        if(emailEl != null){
-          emailEl.value = email;
-          emailEl.disabled = true;
-        }
-      }
-    </script>
   </body>
 </html>
