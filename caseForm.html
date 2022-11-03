@@ -5,16 +5,20 @@
     <style>
       .form-row{
         display: block;
-        padding: 4px;
       }
       
       .form-row label{
         display: block;
+        margin-left: 4px;
+        margin-right: 4px;
       }
       
       .form-row input, 
       .form-row select, 
       .form-row textarea{
+        margin-left: 4px;
+        margin-right: 4px;
+        margin-bottom: 8px;
         width: 200px;
       }
     </style>
@@ -74,7 +78,7 @@
         var lastname = '';
         var email = '';
         
-        if(firstname != null && firstname != undefined && firstname != ""){
+        if(!isEmpty(firstname)){
           let firstnameLabelEl = document.getElementById('firstname-label');
           let firstnameEl = document.getElementById('00N1q000001hv7N');
           if(firstnameLabelEl != null && firstnameEl != null){
@@ -84,7 +88,7 @@
           }
         }
         
-        if(lastname != null && lastname != undefined && lastname != ""){
+        if(!isEmpty(lastname)){
           let lastnameLabelEl = document.getElementById('lastname-label');
           let lastnameEl = document.getElementById('00N1q000001hv7X');
           if(lastnameLabelEl != null && lastnameEl != null){
@@ -94,7 +98,7 @@
           }
         }
         
-        if(email != null && email != undefined && email != ""){
+        if(!isEmpty(email)){
           let emailLabelEl = document.getElementById('email-label');
           let emailEl = document.getElementById('email');
           if(emailLabelEl != null && emailEl != null){
@@ -102,6 +106,10 @@
             emailEl.setAttribute("type", "hidden");
             emailLabelEl.style.display = "none";
           }
+        }
+        
+        function isEmpty(value){
+          return value === null && value === undefined && value === "";
         }
       }
     </script>
