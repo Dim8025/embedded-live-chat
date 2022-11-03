@@ -36,10 +36,24 @@
         var firstname = 'firstname';
         var lastname = 'lastname';
         var email = 'email@test.com';
-
-        this.template.querySelector('#00N1q000001hv7N').value = firstname;
-        this.template.querySelector('#00N1q000001hv7X').value = lastname;
-        this.template.querySelector('#email').value = email;
+        
+        let firstnameEl = this.template.querySelector('#00N1q000001hv7N');
+        if(firstnameEl != null){
+          firstnameEl.value = firstname;
+          firstnameEl.disabled = true;
+        }
+        
+        let lastnameEl = this.template.querySelector('#00N1q000001hv7X');
+        if(lastnameEl != null){
+          lastnameEl.value = lastname;
+          lastnameEl.disabled = true;
+        }
+        
+        let emailEl = this.template.querySelector('#email');
+        if(emailEl != null){
+          emailEl.value = email;
+          emailEl.disabled = true;
+        }
       }
     </script>
   </body>
