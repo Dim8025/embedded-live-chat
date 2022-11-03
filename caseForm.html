@@ -32,54 +32,90 @@
       <input type=hidden name="recordType" id="recordType" value="0121q0000001i28AAA">
       
       <div class="form-row">
-        <label id="firstname-label" for="00N1q000001hv7N">First Name</label>
-        <input id="00N1q000001hv7N" maxlength="40" name="00N1q000001hv7N" size="20" type="text"/>
+        <label id="firstname-label" class="slds-form-element__label" for="00N1q000001hv7N">
+            <abbr class="slds-required" title="required">* </abbr>
+            First Name
+        </label>
+        <div class="slds-form-element__control">
+            <input id="00N1q000001hv7N" class="slds-input" maxlength="40" name="00N1q000001hv7N" size="20" type="text"/>
+        </div>
       </div>
       
       <div class="form-row">
-        <label id="lastname-label" for="00N1q000001hv7X">Last Name</label>
-        <input id="00N1q000001hv7X" maxlength="40" name="00N1q000001hv7X" size="20" type="text"/>
+        <label id="lastname-label" class="slds-form-element__label" for="00N1q000001hv7X">
+            <abbr class="slds-required" title="required">* </abbr>
+            Last Name
+        </label>
+        <div class="slds-form-element__control">
+            <input id="00N1q000001hv7X" class="slds-input" maxlength="40" name="00N1q000001hv7X" size="20" type="text"/>
+        </div>
       </div>
       
       <div class="form-row">
-        <label id="email-label" for="email">Email</label>
-        <input id="email" maxlength="80" name="email" size="20" type="text"/>
+        <label id="email-label" class="slds-form-element__label" for="email">
+            <abbr class="slds-required" title="required">* </abbr>
+            Email
+        </label>
+        <div class="slds-form-element__control">
+            <input id="email" class="slds-input" maxlength="80" name="email" size="20" type="text"/>
+        </div>
       </div>
       
       <div class="form-row">
-        <label id="phone-label" for="phone">Phone</label>
-        <input id="phone" maxlength="40" name="phone" size="20" type="text"/>
+        <label id="phone-label" class="slds-form-element__label" for="phone">
+            Phone
+        </label>
+        <div class="slds-form-element__control">
+            <input id="phone" class="slds-input" maxlength="40" name="phone" size="20" type="text"/>
+        </div>
       </div>
       
       <div class="form-row">
-        <label for="type">Type</label>
-        <select  id="type" name="type">
-          <option value="">--None--</option>
-          <option value="Price Question">Price Question</option>
-          <option value="Treatment Information Request">Treatment Information Request</option>
-          <option value="Reimbursement Question">Reimbursement Question</option>
-        </select>
+        <label class="slds-form-element__label" for="type">
+            Type
+        </label>
+        <div class="slds-form-element__control">
+            <div class="slds-select_container">
+                <select id="type" class="slds-select" name="type">
+                  <option value="">--None--</option>
+                  <option value="Price Question">Price Question</option>
+                  <option value="Treatment Information Request">Treatment Information Request</option>
+                  <option value="Reimbursement Question">Reimbursement Question</option>
+                </select>
+            </div>
+        </div>
       </div>
       
       <div class="form-row">
-        <label for="subject">Subject</label>
-        <input id="subject" maxlength="80" name="subject" size="20" type="text"/>
+        <label class="slds-form-element__label" for="subject">
+            <abbr class="slds-required" title="required">* </abbr>
+            Subject
+        </label>
+        <div class="slds-form-element__control">
+            <input id="subject" class="slds-input" maxlength="80" name="subject" size="20" type="text"/>
+        </div>
       </div>
       
       <div class="form-row">
-        <label for="description">Description</label>
-        <textarea name="description"></textarea>
+        <label class="slds-form-element__label" for="description">
+            <abbr class="slds-required" title="required">* </abbr>
+            Description
+        </label>
+        <div class="slds-form-element__control">
+            <textarea class="slds-textarea" name="description"></textarea>
+        </div>
       </div>
 
       <input type="hidden" id="external" name="external" value="1"/>
       
       <div class="form-row">
-        <input type="submit" name="submit">
+        <input class="slds-button slds-button_brand" type="submit" name="submit">
       </div>
     </form>
 
     <script>
       function populateFields(){
+        /* If the Salesforce User is logged in, populate the below variables to send the details directly, without the user input */
         var firstname = '';
         var lastname = '';
         var email = '';
