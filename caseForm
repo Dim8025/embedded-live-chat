@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+  </head>
+  <onload="populateFields()">
+    <form action="https://audiovitality--devdian.sandbox.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+
+      <input type=hidden name="orgid" value="00D1q0000008iDB">
+      <input type=hidden name="retURL" value="http://google.com">
+
+      First Name:<input  id="00N1q000001hv7N" maxlength="40" name="00N1q000001hv7N" size="20" type="text" /><br>
+
+      Last Name:<input  id="00N1q000001hv7X" maxlength="40" name="00N1q000001hv7X" size="20" type="text" /><br>
+
+      <label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
+
+      <label for="type">Type</label>
+      <select  id="type" name="type">
+        <option value="">--None--</option>
+        <option value="Price Question">Price Question</option>
+        <option value="Treatment Information Request">Treatment Information Request</option>
+        <option value="Reimbursement Question">Reimbursement Question</option>
+      </select><br>
+
+      <label for="subject">Subject</label><input  id="subject" maxlength="80" name="subject" size="20" type="text" /><br>
+
+      <label for="description">Description</label><textarea name="description"></textarea><br>
+
+      <input type="hidden"  id="external" name="external" value="1" /><br>
+
+      <input type="submit" name="submit">
+    </form>
+    
+    <script>
+      function populateFields(){
+        var firstname = 'firstname';
+        var lastname = 'lastname';
+        var email = 'email@test.com';
+
+        this.template.querySelector('#00N1q000001hv7N').value = firstname;
+        this.template.querySelector('#00N1q000001hv7X').value = lastname;
+        this.template.querySelector('#email').value = email;
+      }
+    </script>
+  </body>
+</html>
