@@ -1,0 +1,161 @@
+<html>
+  <head>
+    <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="salesforce-lightning-design-system.min.css"/>
+      
+    <style>
+      .form-row{
+        display: block;
+      }
+      
+      .form-row label{
+        display: block;
+        margin-left: 4px;
+        margin-right: 4px;
+      }
+      
+      .form-row input, 
+      .form-row select, 
+      .form-row textarea{
+        margin-left: 4px;
+        margin-right: 4px;
+        margin-bottom: 8px;
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body onload="populateFields()">
+      <form action="https://audiovitality--staging.sandbox.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+
+      <input type=hidden name="orgid" value="00D09000007iwOd">
+      <input type=hidden name="retURL" value="http://google.com">
+      <input type=hidden name="recordType" id="recordType" value="0126N000000CheZQAS">
+      <!-- Case Origin -->
+      <input type=hidden name="00N6N000000TEYY" id="00N6N000000TEYY" value="Web"> 
+      
+      <div class="form-row">
+        <label id="firstname-label" class="slds-form-element__label" for="00N6N000000TEYX">
+            <abbr class="slds-required" title="required">* </abbr>
+            First Name
+        </label>
+        <div class="slds-form-element__control">
+            <input id="00N6N000000TEYX" class="slds-input" maxlength="40" name="00N6N000000TEYX" size="20" type="text"/>
+        </div>
+      </div>
+      
+      <div class="form-row">
+        <label id="lastname-label" class="slds-form-element__label" for="00N6N000000TEYZ">
+            <abbr class="slds-required" title="required">* </abbr>
+            Last Name
+        </label>
+        <div class="slds-form-element__control">
+            <input id="00N6N000000TEYZ" class="slds-input" maxlength="40" name="00N6N000000TEYZ" size="20" type="text"/>
+        </div>
+      </div>
+      
+      <div class="form-row">
+        <label id="email-label" class="slds-form-element__label" for="email">
+            <abbr class="slds-required" title="required">* </abbr>
+            Email
+        </label>
+        <div class="slds-form-element__control">
+            <input id="email" class="slds-input" maxlength="80" name="email" size="20" type="text"/>
+        </div>
+      </div>
+      
+      <div class="form-row">
+        <label id="phone-label" class="slds-form-element__label" for="phone">
+            Phone
+        </label>
+        <div class="slds-form-element__control">
+            <input id="phone" class="slds-input" maxlength="40" name="phone" size="20" type="text"/>
+        </div>
+      </div>
+      
+      <div class="form-row">
+        <label class="slds-form-element__label" for="type">
+            Type
+        </label>
+        <div class="slds-form-element__control">
+            <div class="slds-select_container">
+                <select id="type" class="slds-select" name="type">
+                  <option value="">--None--</option>
+                  <option value="Price Question">Price Question</option>
+                  <option value="Treatment Information Request">Treatment Information Request</option>
+                  <option value="Reimbursement Question">Reimbursement Question</option>
+                </select>
+            </div>
+        </div>
+      </div>
+      
+      <div class="form-row">
+        <label class="slds-form-element__label" for="subject">
+            <abbr class="slds-required" title="required">* </abbr>
+            Subject
+        </label>
+        <div class="slds-form-element__control">
+            <input id="subject" class="slds-input" maxlength="80" name="subject" size="20" type="text"/>
+        </div>
+      </div>
+      
+      <div class="form-row">
+        <label class="slds-form-element__label" for="description">
+            <abbr class="slds-required" title="required">* </abbr>
+            Description
+        </label>
+        <div class="slds-form-element__control">
+            <textarea class="slds-textarea" name="description"></textarea>
+        </div>
+      </div>
+
+      <input type="hidden" id="external" name="external" value="1"/>
+      
+      <div class="form-row">
+        <input class="slds-button slds-button_brand" type="submit" name="submit">
+      </div>
+    </form>
+
+    <script>
+      function populateFields(){
+        /* If the Salesforce User is logged in, populate the below variables to send the details directly, without the user input */
+        var firstname = '';
+        var lastname = '';
+        var email = '';
+        
+        if(!isEmpty(firstname)){
+          let firstnameLabelEl = document.getElementById('firstname-label');
+          let firstnameEl = document.getElementById('00N6N000000TEYX');
+          if(firstnameLabelEl != null && firstnameEl != null){
+            firstnameEl.value = firstname;
+            firstnameEl.setAttribute("type", "hidden");
+            firstnameLabelEl.style.display = "none";
+          }
+        }
+        
+        if(!isEmpty(lastname)){
+          let lastnameLabelEl = document.getElementById('lastname-label');
+          let lastnameEl = document.getElementById('00N6N000000TEYZ');
+          if(lastnameLabelEl != null && lastnameEl != null){
+            lastnameEl.value = lastname;
+            lastnameEl.setAttribute("type", "hidden");
+            lastnameLabelEl.style.display = "none";
+          }
+        }
+        
+        if(!isEmpty(email)){
+          let emailLabelEl = document.getElementById('email-label');
+          let emailEl = document.getElementById('email');
+          if(emailLabelEl != null && emailEl != null){
+            emailEl.value = email;
+            emailEl.setAttribute("type", "hidden");
+            emailLabelEl.style.display = "none";
+          }
+        }
+        
+        function isEmpty(value){
+          return value === null || value === undefined || value === "";
+        }
+      }
+    </script>
+  </body>
+</html>
