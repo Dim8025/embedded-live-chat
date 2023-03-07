@@ -19,6 +19,10 @@
 			var initESW = function(gslbBaseURL) {
 				embedded_svc.settings.displayHelpButton = true; //Or false
 				embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+				
+				embedded_svc.settings.defaultMinimizedText = 'Contactez-nous';
+        			embedded_svc.settings.disabledMinimizedText = 'Contactez-nous';
+				embedded_svc.settings.offlineSupportMinimizedText = 'Contactez-nous';
 
 				embedded_svc.settings.enabledFeatures = ['LiveAgent'];
 				embedded_svc.settings.entryFeature = 'LiveAgent';
